@@ -36,9 +36,6 @@ class coreDeviceChannel():
         if not self.ifDeviceIDExists(objectID):
             raise coreException("deviceID %s is not exist"%(objectID),False)
         try: 
-            #self.devices[objectID].setChannelValue(channelName,value)
-            #thread = Thread(target=self.devices[objectID].setChannelValue, args=(channelName, value))
-            #thread.start()
             self.startThread(target=self.devices[objectID].setChannelValue, args=(channelName, value))
         except:
             raise coreException("can't setDeviceChannelValue  deviceID %s"%(objectID))
