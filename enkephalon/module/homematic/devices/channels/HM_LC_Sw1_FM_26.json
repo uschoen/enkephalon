@@ -1,0 +1,9 @@
+{
+    "CFGVersion": "0.1.0",
+    "channelPackage": "homematic",
+    "channelType": "HM_LC_Sw1_FM_26",
+    "date": 1673614749,
+    "events": {},
+    "name": "",
+    "parameter": {}
+}

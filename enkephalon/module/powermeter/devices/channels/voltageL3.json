@@ -1,0 +1,9 @@
+{
+    "CFGVersion": "0.1.0",
+    "channelPackage": "powermeter",
+    "channelType": "voltageL3",
+    "date": 1672920310,
+    "events": {},
+    "name": "unknown",
+    "parameter": {}
+}

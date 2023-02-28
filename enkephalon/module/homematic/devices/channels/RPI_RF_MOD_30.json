@@ -1,0 +1,9 @@
+{
+    "CFGVersion": "0.1.0",
+    "channelPackage": "homematic",
+    "channelType": "RPI_RF_MOD_30",
+    "date": 1673614752,
+    "events": {},
+    "name": "",
+    "parameter": {}
+}

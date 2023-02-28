@@ -1,0 +1,9 @@
+{
+    "CFGVersion": "0.1.0",
+    "channelPackage": "homematic",
+    "channelType": "HmIP_BSM_30",
+    "date": 1673614749,
+    "events": {},
+    "name": "",
+    "parameter": {}
+}

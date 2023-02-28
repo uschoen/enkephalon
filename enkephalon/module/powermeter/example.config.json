@@ -1,0 +1,113 @@
+{
+	"strom@vzlogger": {
+		    "enable": true,
+            "modulClass": "meter",
+            "modulPackage": "powermeter",
+            "running": false,
+            "shutdown": true,
+            "startable": true,
+            "config": {
+                "dataMapping": {
+					"serial":{
+						"find":	"0-0:96.1.255*255",
+						"format":[]
+					},
+					"owner":{
+						"find":"1-0:0.0.0*255",
+						"format":[]
+					},
+					"consum":{
+						"find":"1-0:1.8.0*255",
+						"format":[]
+					},
+					"powerL1":{
+						"find":"1-0:21.7.255*255",
+						"format":["round2"],
+						"unit":"A"
+					},
+					"powerL2":{
+						"find":"1-0:41.7.255*255",
+						"format":["round2"],
+						"unit":"A"
+					},
+					"powerL3":{
+						"find":"1-0:61.7.255*255",
+						"format":["round2"],
+						"unit":"A"
+					},
+					"voltageL1":{
+						"find":"1-0:31.7.255*255",
+						"format":["round2"],
+						"unit":"W"
+					},
+					"voltageL2":{
+						"find":"1-0:51.7.255*255",
+						"format":["round2"],
+						"unit":"W"
+					},
+					"voltageL3":{
+						"find":"1-0:71.7.255*255",
+						"format":["round2"],
+						"unit":"W"
+					},
+					"voltL1":{
+						"find": "1-0:32.7.255*255",
+						"format":[],
+						"unit":"V"
+					},
+					"voltL2":{
+						"find":"1-0:52.7.255*255",
+						"format":[],
+						"unit":"V"
+					},
+					"voltL3":{
+						"find":"1-0:72.7.255*255",
+						"format":[],
+						"unit":"V"
+					},
+					"HZ":{
+						"find": "1-0:96.50.0*1",
+						"fomrat":[
+                            "hexTOdec",
+                            "reverseValue",
+                            "x100000",
+                            "round2"
+                        ]
+					},
+					"current_temperature":{
+						"find":"1-0:96.50.0*2",
+						"format":[
+                            "hexTOdec"
+                        ]
+					},
+					"min_temperature":{
+						"find":"1-0:96.50.0*3",
+						"fomat":"hexTOdec"
+					},
+					"average_temperature":{
+						"find":"1-0:96.50.0*4",
+						"format":"hexTOdec"
+					},
+					 "max_temperature":{
+						"find":"1-0:96.50.0*5",
+						"format":"hexTOdec"
+					}
+					
+				},
+                "enable": true,
+                "gatewayID": "strom.vzlogger",
+                "objectID": "strom@vzlogger",
+                "serial": {
+                    "baudrate": 9600,
+                    "bytesize": 7,
+                    "dsrdtr": false,
+                    "parity": "E",
+                    "port": "/dev/ttyUSB0",
+                    "rtscts": false,
+                    "stopbits": 1,
+                    "timeout": 2,
+                    "xonxoff": false
+                }
+            }
+        }
+}

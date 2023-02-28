@@ -1,0 +1,16 @@
+{
+	"homematicXML@rasp-test": {
+            "config": {
+                "hmHost":"http://127.0.0.1",
+                "https":false,
+                "url":"/config/xmlapi/statechange.cgi", 
+                "blockConnector":30
+                },
+            "enable": true,
+            "modulClass": "xml_api",
+            "modulPackage": "homematic",
+            "running": false,
+            "shutdown": true,
+            "startable": false
+        }
+}

@@ -1,0 +1,9 @@
+{
+    "CFGVersion": "0.1.0",
+    "channelPackage": "powermeter",
+    "channelType": "max_temperature",
+    "date": 1672920311,
+    "events": {},
+    "name": "unknown",
+    "parameter": {}
+}

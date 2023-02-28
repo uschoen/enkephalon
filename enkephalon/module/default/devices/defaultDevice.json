@@ -1,0 +1,11 @@
+{
+    "CFGVersion": "0.1.0",
+    "channels": {},
+    "date": 1608797201,
+    "parameter": {
+    	"devicePackage": "default",
+        "deviceType": "defaultDevice",
+        "enable": true
+    },
+    "events":{}
+}

@@ -1,0 +1,17 @@
+{
+	"mariadb@vzlogger":{
+        "enable": true,
+            "modulClass": "dbconnector",
+            "modulPackage": "datamapper",
+            "running": false,
+            "shutdown": true,
+            "startable": false,
+            "config":{
+				"database":{
+			        "user":"enkephalon",
+			        "password":"secret",
+			        "host":"127.0.0.1",
+			        "database":"enkephalon"}
+			}
+    	}	
+ }

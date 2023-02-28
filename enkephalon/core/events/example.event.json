@@ -1,0 +1,8 @@
+{
+	"mysqlupdate@rasp-test": {
+                                "args": {
+                                    "scriptName": "mysqlupdate@rasp-heizung"
+                                },
+                                "callFunction": "runScript"
+                            }
+}

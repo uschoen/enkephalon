@@ -1,0 +1,9 @@
+{
+    "CFGVersion": "0.1.0",
+    "channelPackage": "homematic",
+    "channelType": "HMIP_SWDO_37",
+    "date": 1673614749,
+    "events": {},
+    "name": "",
+    "parameter": {}
+}

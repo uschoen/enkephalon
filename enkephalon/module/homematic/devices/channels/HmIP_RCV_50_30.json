@@ -1,0 +1,9 @@
+{
+    "CFGVersion": "0.1.0",
+    "channelPackage": "homematic",
+    "channelType": "HmIP_RCV_50_30",
+    "date": 1673614750,
+    "events": {},
+    "name": "",
+    "parameter": {}
+}

@@ -1,0 +1,34 @@
+{
+	"mysqlupdate@rasp-test": {
+        "callModul": {
+            "arguments": {
+                "values": {
+                    "arguments": {
+                        "channelName": {
+                            "getCallerObject": {
+                                "arguments": {
+                                    "parameterName": "name"
+                                },
+                                "function": "getParameter"
+                            }
+                        },
+                        "timestamp": {
+                            "timeStampNow": {}
+                        },
+                        "value": {
+                            "getCallerObject": {
+                                "function": "getValue"
+                            }
+                        }
+                    }
+                }
+            },
+            "function": {
+                "string": "update"
+            },
+            "modulName": {
+                "string": "mysqlStatistic@rasp-test"
+            }
+        }
+    }
+}
