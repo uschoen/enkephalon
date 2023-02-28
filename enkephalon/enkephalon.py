@@ -56,20 +56,16 @@ except:
             },        
             "handlers": {
                 
-                "info_handler": {
-                    "backupCount": 5,
-                    "class": "logging.handlers.RotatingFileHandler",
-                    "encoding": "utf8",
-                    "filename": "/mnt/nas01/entwicklung/Workspace/enkephalon_p/log/rasp-test_info.log",
+                "console": {
+                    "class": "logging.StreamHandler",
                     "formatter": "simple",
-                    "level": "INFO",
-                    "maxBytes": 12000000,
-                    "mode": "w"
+                    "level": "DEBUG",
+                    "stream": "ext://sys.stdout"
                 }
             },   
             "root": {
                 "level": "INFO",
-                "handlers": ["info_handler"]
+                "handlers": ["console"]
             }
         })
     
