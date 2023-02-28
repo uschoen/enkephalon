@@ -1,0 +1,21 @@
+{
+    "config": {
+        "configuration": {
+            "basePath": "etc",
+            "filePath": "rasp-test",
+            "files": {
+                "cluster": "cluster.json",
+                "core": "config.json",
+                "devices": "devices.json",
+                "logger": "logger.json",
+                "module": "module.json",
+                "script": "script.json"
+            }
+        },
+        "core": {
+            "daemon": true
+        }
+    },
+    "from": 1677615764,
+    "version": "0.1.0"
+}
