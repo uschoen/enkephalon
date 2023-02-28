@@ -23,3 +23,12 @@ class modulException(Exception):
         super(modulException, self).__init__(msg)
         self.msg = msg
         LOG.critical("%s"%(msg),exc_info=tracback)
+        
+class modulError(Exception):
+    '''
+    
+    '''
+    def __init__(self, msg="known error occurred, catch by coreException",tracback=True):
+        super(modulError, self).__init__(msg)
+        self.msg = msg
+        LOG.critical("%s"%(msg),exc_info=tracback)

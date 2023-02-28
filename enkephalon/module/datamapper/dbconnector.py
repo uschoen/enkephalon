@@ -5,6 +5,7 @@ Created on 01.01.2023
 '''
 
 from core.coreException import coreException, modulException
+from module.modulException import modulError
 import threading
 '''
 configuration file
@@ -123,7 +124,7 @@ class dbconnector(defaultModul):
             sql=self.__buildSQL(self.config["mapping"])
             self.lock.acquire()
             self.__database[self.config["dbTyp"]]['execute'](sql)
-        except (coreException,modulException) as e:
+        except (coreException,modulException,modulError) as e:
             LOG.critical("error in mysqlMapper: %s with error:%s"%(self.config['objectID'],e))
             self.__mariadb_DB_close()
         except:
@@ -150,7 +151,7 @@ class dbconnector(defaultModul):
         except (coreException) as e:
             raise e
         except:
-            raise coreException("unknown err in getValue",True)
+            raise modulError("unknown err in getValue",True)
     
     def __buildSQL(self,mapping):
         '''
@@ -180,7 +181,7 @@ class dbconnector(defaultModul):
         except coreException as e: 
             raise e
         except:
-            raise coreException("error in modul %s: buildSQL"%(self.config['objectID']),True)  
+            raise modulError("error in modul %s: buildSQL"%(self.config['objectID']),True)  
     
     '''
     pymysql driver
@@ -234,10 +235,10 @@ class dbconnector(defaultModul):
             
         except mariadb.Error as e:
             self.__mariadb_DB_close()
-            raise coreException("error for connect mariadb host:%s database:%s db msg:%s"%(cfg["host"],cfg["database"],e))
+            raise modulError("error for connect mariadb host:%s database:%s db msg:%s"%(cfg["host"],cfg["database"],e))
         except (Exception) as e:
             self.__mariadb_DB_close()
-            raise coreException("unknown error for connect db msg:%s"%(e))
+            raise modulError("unknown error for connect db msg:%s"%(e))
     
     def __mariadb_DB_execute(self,sql):
         """
@@ -258,9 +259,9 @@ class dbconnector(defaultModul):
             self.dbInstance.commit()
             dbCursor.close()
         except (mariadb.Error) as e:
-            raise modulException("mysql error %s"%(e))
+            raise modulError("mysql error %s"%(e))
         except :
-            raise coreException("unknown error sql:%s"%(sql),True)  
+            raise modulError("unknown error sql:%s"%(sql),True)  
         
     def __mariadb_DB_close(self):  
         '''
