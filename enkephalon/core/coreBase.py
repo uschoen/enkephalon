@@ -34,6 +34,17 @@ from module.modulException import modulException
 class coreBase():
     
     def __init__(self):
+        '''
+        coreBase 
+        
+        Global variable:
+        self.path:          absolute path of the script
+        self.rootPath:      root path of the script
+        self.host:          host name
+        self.threads:       all running thread objects
+        
+        
+        '''
         
         '''
         self.path: the absolute path of the script
@@ -104,7 +115,7 @@ class coreBase():
         args= argument
         '''
         try:
-            thread=Thread(target=target, args=args)
+            thread=Thread(target=target, args=args,daemon=True)
             self.threads.append(thread)
             thread.start()
         except (Exception) as e:
