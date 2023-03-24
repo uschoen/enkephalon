@@ -11,12 +11,33 @@ __author__ = 'ullrich schoen'
 # Standard library imports
 
 import logging
-from core.coreException import coreException
+
 
 LOG=logging.getLogger(__name__)
 
-class formatException(coreException):
+class scriptException(Exception):
     '''
     
     '''
-    pass
+    def __init__(self, msg="unknown error occurred. ",tracback=True):
+        super(scriptException, self).__init__(msg)
+        self.msg = msg
+        LOG.critical("%s"%(msg),exc_info=tracback)
+  
+class formatException(Exception):
+    '''
+    
+    '''
+    def __init__(self, msg="unknown error occurred. ",tracback=False):
+        super(formatException, self).__init__(msg)
+        self.msg = msg
+        LOG.critical("%s"%(msg),exc_info=tracback)      
+        
+class configException(Exception):
+    '''
+    
+    '''
+    def __init__(self, msg="unknown error occurred. ",tracback=False):
+        super(configException, self).__init__(msg)
+        self.msg = msg
+        LOG.critical("%s"%(msg),exc_info=tracback)             

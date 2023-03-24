@@ -12,7 +12,7 @@ from core.coreEvents import coreEvents
 from core.coreConfiguration import coreConfiguration
 from core.coreLogger import coreLogger
 from core.coreModule import coreModule
-from core.coreFormate import coreFormater
+from core.format.formater import formater
 from core.coreDevices import coreDevices
 from core.coreDeviceChannel import coreDeviceChannel
 from core.coreCluster import coreCluster
@@ -36,7 +36,7 @@ class manager(coreBase,
               coreConfiguration,
               coreLogger,
               coreModule,
-              coreFormater,
+              formater,
               coreDevices,
               coreDeviceChannel,
               coreCluster,
@@ -119,9 +119,9 @@ class manager(coreBase,
         coreDevices.__init__(self)
         coreDeviceChannel.__init__(self)
         scriptManager.__init__(self)
-        coreFormater.__init__(self)
+        formater.__init__(self)
         
-        LOG.info("init core manager finish, version %s"%(__version__))  
+        LOG.info("__init core manager finish, version %s"%(__version__))  
         
     def start(self):
         '''
