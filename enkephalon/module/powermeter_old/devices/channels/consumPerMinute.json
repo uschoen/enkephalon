@@ -1,9 +1,0 @@
-{
-    "CFGVersion": "0.1.0",
-    "channelPackage": "powermeter",
-    "channelType": "consumPerMinute",
-    "date": 1673372314,
-    "events": {},
-    "name": "",
-    "parameter": {}
-}
