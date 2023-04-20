@@ -4,6 +4,7 @@ Created on 01.01.2023
 @author: uschoen
 '''
 __version__ = '0.1.0'
+from _ast import Try
 __author__ = 'ullrich schoen'
 
 
@@ -69,6 +70,20 @@ class coreBase():
         
         LOG.info("__init core base finish, version %s"%(__version__))
     
+    def getLocalIP(self):
+        '''    
+        return the local IP Adresss
+        '''
+        try:
+            s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+            s.connect(('8.8.8.8', 9))
+            ip = s.getsockname()[0]
+            return ip
+        except (socket.error) as e:
+            raise coreException("socket error in getLocalIP. error: %e"%(e))
+        except (Exception) as e:
+            raise coreException("unknown error in getLocalIP. error: %e"%(e))
+        
     def clearUpThreads(self):
         '''
         clear up death or old thread
