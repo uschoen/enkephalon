@@ -6,7 +6,7 @@ Created on 01.01.2023
 
 
 
-__version__='0.1.0'
+__version__='0.1.1'
 __author__ = 'ullrich schoen'
 
 # Standard library imports
@@ -33,7 +33,7 @@ class defaultModul(threading.Thread):
         self.core=coreManager()
         self.config={
                         'enable':False,
-                        'objectID':"unknown"
+                        'objectID':objectID
                       }
         self.config.update(modulCFG)
         ''' gateway running '''
@@ -41,7 +41,7 @@ class defaultModul(threading.Thread):
         
         self.ifShutdown=False
         ''' core instance '''
-        LOG.debug("build default modul %s instance, version %s"%(__name__,__version__))
+        LOG.debug("__init default modul %s instance, version %s"%(__name__,__version__))
         
     def run(self):
         LOG.warning("modul %s have no run function"%(self.config['objectID']))
@@ -68,7 +68,10 @@ class defaultModul(threading.Thread):
         '    exception: none
         '
         '''
-        LOG.info("starting modul %s"%(self.config['objectID']))
+        if self.ifShutdown:
+            LOG.error("modul is shutdown and can*t start")
+            return
+        LOG.info("set running=true. starting modul %s"%(self.config['objectID']))
         self.running=True
     
     def shutDownModul(self):
